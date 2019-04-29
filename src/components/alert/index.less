@@ -1,0 +1,26 @@
+@import '../style/default.less';
+@import '../style/mixins/alert.less';
+
+@alert-prefix-cls: ~'@{wui-prefix}-alert';
+
+.@{alert-prefix-cls} {
+  position: relative;
+  padding: 8px 16px;
+  margin-bottom: 10px;
+
+  &-info {
+    .var-alert(@alert-info-bg-color, @alert-info-bg-color, @white);
+  }
+
+  &-success {
+    .var-alert(@alert-success-bg-color, @alert-success-bg-color, @white);
+  }
+
+  &-warning {
+    .var-alert(@alert-warning-bg-color, @alert-warning-bg-color, @white);
+  }
+
+  &-danger {
+    .var-alert(@alert-danger-bg-color, @alert-danger-bg-color, @white);
+  }
+}
