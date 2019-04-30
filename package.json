@@ -12,7 +12,7 @@
     "tsc": "tsc --outDir dist",
     "start": "node build/dev-server.js",
     "eslint": "eslint ./src",
-    "pretty": "prettier --write {src,build}/{**,**/**}/*.{js,jsx,ts,tsx}",
+    "pretty": "prettier --write '{src,build}/**/*.{js,jsx,ts,tsx}'",
     "start:doc": "docz dev",
     "build:doc": "docz build",
     "test": "jest"
