@@ -27,7 +27,7 @@ readFiles(
       return console.error('read files error:', error)
     }
     fs.outputFileSync(
-      file.replace(componentsPath, 'publish/lib'),
+      file.replace(componentsPath, 'lib'),
       fs.readFileSync(file)
     )
   }

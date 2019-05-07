@@ -1,18 +1,20 @@
 const path = require('path')
-const config = require('./config')
 const webpack = require('webpack')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const devConfig = {
-  mode: config.dev.env,
-  devtool: config.dev.devtool,
-  entry: [path.join(__dirname, '../src/index.js')],
+  mode: 'development',
+  devtool: 'source-map',
+  entry: [
+    'webpack-hot-middleware/client?noInfo=true&reload=true',
+    path.join(__dirname, '../example/index.js')
+  ],
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, config.dev.output),
-    publicPath: config.dev.publicPath
+    path: path.join(__dirname, './dist'),
+    publicPath: '/'
   },
   resolve: {
     extensions: [
@@ -64,12 +66,12 @@ const devConfig = {
     new webpack.HotModuleReplacementPlugin(),
     new ProgressBarPlugin({ summary: false }),
     new MiniCssExtractPlugin({
-      filename: `${config.dev.assetsPublicPath}/css/main.css`
+      filename: `static/css/main.css`
     }),
     new HtmlWebpackPlugin({
       title: 'wui',
       filename: 'index.html',
-      template: path.join(__dirname, '../src/index.html'),
+      template: path.join(__dirname, '../example/index.html'),
       inject: true
     })
   ]

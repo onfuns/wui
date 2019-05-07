@@ -1,6 +1,6 @@
 ### wui
 
-#### start dev
+#### start
 
 ```
 npm run start
@@ -34,4 +34,10 @@ npm run test
 
 ```
 npm run pretty
+```
+
+#### start demo
+
+```
+npm run start:demo
 ```
