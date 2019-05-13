@@ -13,5 +13,5 @@
     "lib": ["dom", "es7"]
   },
   "include": ["src/components"],
-  "exclude": ["node_modules", "lib", "es"]
+  "exclude": ["node_modules", "lib"]
 }

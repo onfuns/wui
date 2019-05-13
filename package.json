@@ -19,6 +19,9 @@
     "build:doc": "docz build",
     "test": "jest"
   },
+  "jest": {
+    "testRegex": "/__tests__/.*\\.(ts|js)$"
+  },
   "prettier": "@frontend-cli/prettier-config",
   "husky": {
     "hooks": {
