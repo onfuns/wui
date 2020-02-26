@@ -1,3 +1,3 @@
-export const getPrefix = (type: string) => {
+export const getPrefix = (type: string): string => {
   return `wui-${type}`
 }

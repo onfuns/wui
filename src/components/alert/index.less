@@ -1,7 +1,11 @@
 @import '../style/default.less';
-@import '../style/mixins/alert.less';
 
 @alert-prefix-cls: ~'@{wui-prefix}-alert';
+.var-alert(@background-color, @border-corlor, @text-color) {
+  border: 1px solid @border-corlor;
+  background-color: @background-color;
+  color: @text-color;
+}
 
 .@{alert-prefix-cls} {
   position: relative;

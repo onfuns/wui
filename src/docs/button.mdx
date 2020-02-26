@@ -1,0 +1,26 @@
+---
+name: 按钮
+menu: 组件
+---
+
+import { Playground, Props } from 'docz'
+import Button from '../components/button'
+
+### 消息提示
+
+共有四种样式 `default`、`primary`、`danger`、`ghost`。
+
+<Playground>
+  {() => {
+    const onClick = (type, text) => {
+      message[type](text)
+    }
+    return (
+      <div>
+        <Button type='default'>默认</Button>
+        <Button type='primary'>基础</Button>
+        <Button type='primary'>危险</Button>
+      </div>
+    )
+  }}
+</Playground>
