@@ -8,11 +8,11 @@ import './index.less'
 const prefix: string = getPrefix('message')
 
 export interface MsgProps {
-  type: 'success' | 'error' | 'warn' | 'info'
+  readonly type: 'success' | 'error' | 'warn' | 'info'
   content?: string
 }
 
-const icons = {
+const icons: { [key: string]: string } = {
   success: 'success',
   error: 'reeor',
   warn: 'warning',
@@ -31,9 +31,10 @@ const Message = ({ type, content }: MsgProps) => {
 
 let timeId: any = null
 const removeAll = () => {
-  let doms = document.querySelectorAll(`.${prefix}`)
+  const doms = document.querySelectorAll(`.${prefix}`)
   doms && doms.forEach(d => d.parentNode && d.parentNode.removeChild(d))
   timeId && clearTimeout(timeId)
+  timeId = null
 }
 
 const notice = (
@@ -47,7 +48,7 @@ const notice = (
   div.setAttribute('class', className)
   document.body.appendChild(div)
   ReactDom.render(<Message type={type} content={content} />, div)
-  if (duration || duration === 0) {
+  if (duration >= 0) {
     timeId = setTimeout(() => document.body.removeChild(div), duration * 1000)
   }
 }

@@ -17,9 +17,18 @@ import Button from '../components/button'
     }
     return (
       <div>
-        <Button type='default'>默认</Button>
-        <Button type='primary'>基础</Button>
-        <Button type='primary'>危险</Button>
+        <Button type='default' style={{ marginRight: 10 }}>
+          默认
+        </Button>
+        <Button type='primary' style={{ marginRight: 10 }}>
+          基础
+        </Button>
+        <Button type='danger' icon='success' style={{ marginRight: 10 }}>
+          危险
+        </Button>
+        <Button type='success' style={{ marginRight: 10 }}>
+          成功
+        </Button>
       </div>
     )
   }}

@@ -1,0 +1,60 @@
+@import '../style/default.less';
+
+@button-prefix-cls: ~'@{wui-prefix}-button';
+.var-button(@background-color, @text-color) {
+  border: 1px solid;
+  border-color: @background-color;
+  background-color: @background-color;
+  color: @text-color;
+  .disabledcolor(@background-color);
+}
+
+.disabledcolor(@color) {
+  &[disabled] {
+    background-color: fade(@color, 50%);
+    border-color: fade(@color, 50%);
+    cursor: not-allowed;
+  }
+}
+
+.@{button-prefix-cls} {
+  padding: @padding_8_16;
+  cursor: pointer;
+  outline: none;
+  color: @white;
+  font-size: @font-size;
+  border-radius: @button-border-radius;
+  &:active {
+    box-shadow: 0 0 0 1px rgba(29, 28, 28, 0.1) inset,
+      0 0 5px rgba(29, 28, 28, 0.1) inset;
+  }
+
+  & > .iconfont {
+    margin-right: 3px;
+  }
+
+  & > span {
+    vertical-align: middle;
+  }
+
+  &-default {
+    .var-button(@button-default-bg-color, @primary-color);
+  }
+
+  &-primary {
+    .var-button(@info-color, @white);
+  }
+
+  &-success {
+    .var-button(@success-color, @white);
+  }
+
+  &-ghost {
+    .var-button(@button-default-bg-color, @white);
+    border: 1px solid @info-color;
+  }
+
+  &-danger {
+    .var-button(@danger-color, @white);
+  }
+}
