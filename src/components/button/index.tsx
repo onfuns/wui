@@ -41,7 +41,7 @@ export default ({
   return (
     <button {...props}>
       {icon ? <Icon type={icon} /> : null}
-      <span>{children}</span>
+      {children}
     </button>
   )
 }

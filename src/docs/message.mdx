@@ -3,12 +3,13 @@ name: 消息提示
 menu: 组件
 ---
 
-import { Playground, Props } from 'docz'
-import { message } from '../components/message/index.tsx'
-
 ### 消息提示
 
 共有四种样式 `success`、`info`、`warn`、`error`。
+
+import { Playground, Props } from 'docz'
+import { message } from '../components/message/index.tsx'
+import Button from '../components/button/index.tsx'
 
 <Playground>
   {() => {
@@ -17,10 +18,18 @@ import { message } from '../components/message/index.tsx'
     }
     return (
       <div>
-        <button onClick={() => onClick('success', '成功')}>success</button>
-        <button onClick={() => onClick('error', '失败')}>error</button>
-        <button onClick={() => onClick('warn', '警告')}>warn</button>
-        <button onClick={() => onClick('info', '提示')}>info</button>
+        <Button type='success' onClick={() => onClick('success', '成功')}>
+          success
+        </Button>
+        <Button type='danger' onClick={() => onClick('error', '失败')}>
+          error
+        </Button>
+        <Button type='default' onClick={() => onClick('warn', '警告')}>
+          warn
+        </Button>
+        <Button type='primary' onClick={() => onClick('info', '提示')}>
+          info
+        </Button>
       </div>
     )
   }}
