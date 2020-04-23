@@ -1,0 +1,43 @@
+@import '../style/default.less';
+
+@message-prefix-cls: ~'@{wui-prefix}-message';
+.var-message(@text-color) {
+  color: @text-color;
+}
+
+.@{message-prefix-cls} {
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  animation-duration: 0.5s;
+  z-index: 99999999;
+  &-content {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: #585858;
+    pointer-events: all;
+    & > span {
+      vertical-align: middle;
+    }
+  }
+  & .iconfont {
+    margin-right: 3px;
+    font-size: 18px;
+  }
+  &-success > .iconfont {
+    .var-message(@success-color);
+  }
+  &-error > .iconfont {
+    .var-message(@danger-color);
+  }
+  &-warn > .iconfont {
+    .var-message(@warning-color);
+  }
+  &-info > .iconfont {
+    .var-message(@info-color);
+  }
+}

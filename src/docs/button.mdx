@@ -1,0 +1,35 @@
+---
+name: 按钮
+menu: 组件
+---
+
+### 按钮显示
+
+共有四种样式 `default`、`primary`、`danger`、`ghost`。
+
+import { Playground, Props } from 'docz'
+import Button from '../components/button'
+
+<Playground>
+  {() => {
+    const onClick = (type, text) => {
+      message[type](text)
+    }
+    return (
+      <div>
+        <Button type='default' style={{ marginRight: 10 }}>
+          默认
+        </Button>
+        <Button type='primary' style={{ marginRight: 10 }}>
+          基础
+        </Button>
+        <Button type='danger' icon='success' style={{ marginRight: 10 }}>
+          危险
+        </Button>
+        <Button type='success' style={{ marginRight: 10 }}>
+          成功
+        </Button>
+      </div>
+    )
+  }}
+</Playground>

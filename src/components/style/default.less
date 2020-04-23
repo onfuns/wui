@@ -1,14 +1,32 @@
+@import './animate.less';
+@import '//at.alicdn.com/t/font_1657659_e509abejhmm.css';
+
 @wui-prefix: wui;
 
-@primary-color: red;
+@font-size: 14px;
+@primary-color: #1a1a1a;
 @info-color: #3bb4f2;
 @success-color: #5eb95e;
 @danger-color: #dd514c;
 @warning-color: #f37b1d;
 @white: #fff;
 @black: #000;
+@border-radius: 0;
+@padding_8 :8px;
+@padding_16 :16px;
+@padding_8_16 :8px 16px;
 
 @alert-info-bg-color: @info-color;
 @alert-success-bg-color: @success-color;
 @alert-warning-bg-color: @warning-color;
 @alert-danger-bg-color: @danger-color;
+
+@button-default-bg-color: #e6e6e6;
+@button-border-radius: @border-radius;
+
+body {
+  font-size: @font-size;
+  color: @primary-color;
+  line-height: 1.5;
+  color: @primary-color;
+}
